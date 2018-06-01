@@ -18,7 +18,7 @@ public class SimpleConfigClientController {
     @Value("${config.scaner.user}")
     private String scanerUser;
 
-    @RequestMapping("/config-sacner-user")
+    @RequestMapping("/config-scaner-user")
     public String getScanerUser(){
         return scanerUser;
     }

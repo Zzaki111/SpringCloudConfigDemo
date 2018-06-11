@@ -1,6 +1,7 @@
 package com.zzaki.config.client;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,12 +16,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 public class SimpleConfigClientController {
 
-    @Value("${config.scaner.user}")
-    private String scanerUser;
+    private static String configTest;
 
-    @RequestMapping("/config-scaner-user")
-    public String getScanerUser(){
-        return scanerUser;
+    @Value("${config.test}")
+    public void setConfigTest(String configTest){
+        SimpleConfigClientController.configTest = configTest;
+    }
+
+    @RequestMapping("/config-test")
+    public String getConfigTest(){
+        return configTest;
     }
 
 

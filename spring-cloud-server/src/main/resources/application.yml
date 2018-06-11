@@ -7,3 +7,12 @@ spring:
         git:
           uri: https://github.com/Zzaki111/SpringCloudConfigDemo
           search-paths: test-config-dir
+  application:
+    name: config-server
+security:
+  user:
+    name: zzaki
+    password: 123456
+eureka:
+  client:
+    service-url.defaultZone: http://localhost:1111/eureka/

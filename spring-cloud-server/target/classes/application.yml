@@ -5,5 +5,14 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Zzaki111/SpringCloudConfigDemo
-          search-paths: test-config-dir
+          uri: http://172.16.40.174:10080/zzaki/ConfigRepository.git
+          search-paths: RisRepository
+  application:
+    name: config-server
+security:
+  user:
+    name: zzaki
+    password: 123456
+eureka:
+  client:
+    service-url.defaultZone: http://172.16.40.183:1111/eureka/
